@@ -27,7 +27,16 @@ export class Feedback extends React.Component {
 
   render() {
     return (
-      <div>
+      <div
+        style={{
+          height: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'top',
+          fontSize: 40,
+          color: '#010101',
+        }}
+      >
         <Section
           title={'Please Leave feedback'}
           options={Object.keys(this.state)}
@@ -38,29 +47,6 @@ export class Feedback extends React.Component {
           total={this.countTotalFeedback()}
           positive={this.countPositiveFeedbackPercentage()}
         />
-        {/* <h1>Please leave feedback</h1>
-        <div>
-          {this.options.map(key => {
-            const Icon = icons[key];
-            return (
-              <button
-                key={key}
-                type="button"
-                onClick={() => this.ratingIncrement(key)}
-              >
-                <Icon /> {key}
-              </button>
-            );
-          })}
-        </div>
-        <h2>Statistics</h2>
-        <div>
-          <p>Good: {this.state.good}</p>
-          <p>Neutral: {this.state.neutral}</p>
-          <p>Bad: {this.state.bad}</p>
-          <p>Total: {this.countTotalFeedback()}</p>
-          <p>Positive feedback: {this.countPositiveFeedbackPercentage()}%</p>
-        </div> */}
       </div>
     );
   }

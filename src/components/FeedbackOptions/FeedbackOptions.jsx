@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
+  Button,
+  Buttons,
+} from 'components/FeedbackOptions/FeedbackOptions.styled';
+import {
   BsFillEmojiFrownFill,
   BsFillEmojiNeutralFill,
   BsFillEmojiSmileFill,
@@ -14,16 +18,16 @@ const icons = {
 
 export const FeedbackOptions = ({ options, onBtnClick }) => {
   return (
-    <div>
+    <Buttons>
       {options.map(key => {
         const Icon = icons[key];
         return (
-          <button key={key} type="button" onClick={() => onBtnClick(key)}>
+          <Button key={key} type="button" onClick={() => onBtnClick(key)}>
             <Icon /> {key}
-          </button>
+          </Button>
         );
       })}
-    </div>
+    </Buttons>
   );
 };
 
