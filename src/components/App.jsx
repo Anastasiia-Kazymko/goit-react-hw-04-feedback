@@ -1,15 +1,5 @@
 import React from 'react';
-import {
-  BsFillEmojiFrownFill,
-  BsFillEmojiNeutralFill,
-  BsFillEmojiSmileFill,
-} from 'react-icons/bs';
-
-const icons = {
-  good: BsFillEmojiSmileFill,
-  neutral: BsFillEmojiNeutralFill,
-  bad: BsFillEmojiFrownFill,
-};
+import { Section } from 'components/Section/Section';
 
 export class Feedback extends React.Component {
   state = {
@@ -18,9 +8,9 @@ export class Feedback extends React.Component {
     bad: 0,
   };
 
-  options = Object.keys(this.state);
+  //options = Object.keys(this.state);
 
-  ratingIncrement = key => {
+  onBtnClick = key => {
     this.setState(prevState => ({
       [key]: prevState[key] + 1,
     }));
@@ -38,7 +28,17 @@ export class Feedback extends React.Component {
   render() {
     return (
       <div>
-        <h1>Please leave feedback</h1>
+        <Section
+          title={'Please Leave feedback'}
+          options={Object.keys(this.state)}
+          onBtnClick={this.onBtnClick}
+          good={this.state.good}
+          neutral={this.state.neutral}
+          bad={this.state.bad}
+          total={this.countTotalFeedback()}
+          positive={this.countPositiveFeedbackPercentage()}
+        />
+        {/* <h1>Please leave feedback</h1>
         <div>
           {this.options.map(key => {
             const Icon = icons[key];
@@ -60,7 +60,7 @@ export class Feedback extends React.Component {
           <p>Bad: {this.state.bad}</p>
           <p>Total: {this.countTotalFeedback()}</p>
           <p>Positive feedback: {this.countPositiveFeedbackPercentage()}%</p>
-        </div>
+        </div> */}
       </div>
     );
   }
