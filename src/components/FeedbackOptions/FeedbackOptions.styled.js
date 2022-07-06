@@ -2,7 +2,9 @@ import styled from '@emotion/styled';
 
 export const Buttons = styled.div`
   display: flex;
-  align-items: center;
+  lign-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 export const Button = styled.button`
@@ -11,4 +13,5 @@ export const Button = styled.button`
   background-color: transparent;
   border-radius: 3px;
   cursor: pointer;
+  margin-right: 10px;
 `;

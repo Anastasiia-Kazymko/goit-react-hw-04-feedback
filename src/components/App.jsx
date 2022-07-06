@@ -36,6 +36,7 @@ export class Feedback extends React.Component {
           fontSize: 40,
           color: '#010101',
         }}
+        npm
       >
         <Section
           title={'Please Leave feedback'}
