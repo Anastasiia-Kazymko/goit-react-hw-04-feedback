@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
-import { Title, Rating } from 'components/Statistics/Statistics.styled';
+import { Rating } from 'components/Statistics/Statistics.styled';
 
-export const Statistics = ({ title, good, neutral, bad, total, positive }) => {
+export const Statistics = ({ good, neutral, bad, total, positive }) => {
   return (
     <>
-      <Title>{title}</Title>
       <Rating>Good:{good}</Rating>
       <Rating>Neutral:{neutral}</Rating>
       <Rating>Bad:{bad}</Rating>
