@@ -19,11 +19,16 @@ const icons = {
 export const FeedbackOptions = ({ options, onBtnClick }) => {
   return (
     <Buttons>
-      {options.map(key => {
-        const Icon = icons[key];
+      {options.map(option => {
+        const Icon = icons[option];
         return (
-          <Button key={key} type="button" onClick={() => onBtnClick(key)}>
-            <Icon /> {key}
+          <Button
+            key={option}
+            type="button"
+            name={option}
+            onClick={() => onBtnClick(option)}
+          >
+            <Icon /> {option}
           </Button>
         );
       })}
